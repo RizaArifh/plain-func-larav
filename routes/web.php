@@ -53,3 +53,21 @@ Route::get('/posts/{id}',[PostController::class,'getPostById'])->name('post.getb
 Route::get('/edit-post/{id}',[PostController::class,'editPost'])->name('post.edit');
 Route::get('/delete-post/{id}',[PostController::class,'deletePost'])->name('post.delete');
 Route::post('/update-post',[PostController::class,'updatePost'])->name('post.update');
+//innerjoin
+Route::get('/inner-join',[PostController::class,'innerJoinClause'])->name('post.innerjoin');
+Route::get('/left-join',[PostController::class,'leftJoinClause'])->name('post.leftjoin');
+Route::get('/right-join',[PostController::class,'rightJoinClause'])->name('post.rightjoin');
+
+//start using model
+Route::get('/all-post',[PostController::class,'getAllPostsUsingModel'])->name('post.getallpostusingmodel');
+
+//page
+Route::get('/home',function(){
+    return view('index');
+} );
+Route::get('/about',function(){
+    return view('about');
+} );
+Route::get('/contact',function(){
+    return view('contact');
+} );
