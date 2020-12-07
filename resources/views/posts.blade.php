@@ -18,11 +18,19 @@
                             All Post
                         </div>
                         <div class="card-body">
+
                         @if(Session::has('post_deleted'))
                             <div class="alert alert-danger" role="alert">
                                 {{Session::get('post_deleted')}}
                             </div>
                             @endif
+                            @if(Session::has('post_created'))
+                            <div class="alert alert-success" role="alert">
+                                {{Session::get('post_created')}}
+                            </div>
+                            @endif
+                            <a class="btn btn-success" href="{{route('post.add')}}">Add Post</a>
+
                             <table class="table">
                                 <thead>
                                     <tr>

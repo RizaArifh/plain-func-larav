@@ -24,7 +24,7 @@ class PostController extends Controller
             'title'=>$request->title,
             'body'=>$request->body
         ]);
-        return back()->with('post_created','post has been created successfully');
+        return redirect()->route('post.getallpost')->with('post_created','post has been created successfully');
     }
     public function getPostById($id){
         $post=DB::table('posts')->where('id',$id)->first();

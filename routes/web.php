@@ -27,11 +27,11 @@ Route::get('/', function () {
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/posts', [ClientController::class,'getAllPost'])->name('posts.getallpost');
-Route::get('/posts/{id}', [ClientController::class,'getPostById'])->name('posts.getpostbyid');
-Route::get('/add-post', [ClientController::class,'addPost'])->name('posts.addpost');
-Route::get('/update-post', [ClientController::class,'updatePost'])->name('posts.updatepost');
-Route::get('/delete-post/{id}',[ClientController::class,'deletePost' ])->name('posts.delete');
+// Route::get('/posts', [ClientController::class,'getAllPost'])->name('posts.getallpost');
+// Route::get('/posts/{id}', [ClientController::class,'getPostById'])->name('posts.getpostbyid');
+// Route::get('/add-post', [ClientController::class,'addPost'])->name('posts.addpost');
+// Route::get('/update-post', [ClientController::class,'updatePost'])->name('posts.updatepost');
+// Route::get('/delete-post/{id}',[ClientController::class,'deletePost' ])->name('posts.delete');
 
 Route::get('/fluent-string', [FluentController::class,'index'])->name('fluent.string');
 

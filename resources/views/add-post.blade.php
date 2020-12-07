@@ -18,11 +18,7 @@
                             Add New Post
                         </div>
                         <div class="card-body">
-                            @if(Session::has('post_created'))
-                            <div class="alert alert-success" role="alert">
-                                {{Session::get('post_created')}}
-                            </div>
-                            @endif
+                            
                             <form method="post" action="{{route('post.addsubmit')}}">
                                 @csrf
                                 <div class="form-group">
