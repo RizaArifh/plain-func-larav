@@ -28,7 +28,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 // Route::get('/posts', [ClientController::class,'getAllPost'])->name('posts.getallpost');
 // Route::get('/posts/{id}', [ClientController::class,'getPostById'])->name('posts.getpostbyid');
 // Route::get('/add-post', [ClientController::class,'addPost'])->name('posts.addpost');
@@ -66,13 +66,14 @@ Route::get('/all-post',[PostController::class,'getAllPostsUsingModel'])->name('p
 //page
 Route::get('/home',function(){
     return view('index');
-} );
+})->name('home');
 Route::get('/about',function(){
     return view('about');
-} );
+} )->name('about');
 Route::get('/contact',function(){
     return view('contact');
-} );
+} )->name('contact');
 
-Route::get('/users', [PaginationController::class,'allUsers']);
-Route::get('/upload', [UploadController::class,'uploadForm']);
+Route::get('/users', [PaginationController::class,'allUsers'])->name('users.all');
+Route::get('/upload', [UploadController::class,'uploadForm'])->name('upload.uploadform');
+Route::post('/upload', [UploadController::class,'uploadFile'])->name('upload.uploadfile');

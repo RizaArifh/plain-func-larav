@@ -9,7 +9,7 @@
                     File Upload
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                <form action="{{route('upload.uploadfile')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="file">Choose File</label>
