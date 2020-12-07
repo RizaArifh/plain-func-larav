@@ -10,6 +10,7 @@ use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UploadController;
+use App\PaymentGateway\Payment;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ use App\Http\Controllers\UploadController;
 */
 
 Route::get('/', function () {
+    // App::setLocale($locale);
     return view('welcome');
 });
 
@@ -77,3 +79,7 @@ Route::get('/contact',function(){
 Route::get('/users', [PaginationController::class,'allUsers'])->name('users.all');
 Route::get('/upload', [UploadController::class,'uploadForm'])->name('upload.uploadform');
 Route::post('/upload', [UploadController::class,'uploadFile'])->name('upload.uploadfile');
+
+Route::get('/payment', function () {
+    return Payment::process();
+});
