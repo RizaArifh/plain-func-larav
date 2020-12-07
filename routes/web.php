@@ -6,8 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,3 +73,6 @@ Route::get('/about',function(){
 Route::get('/contact',function(){
     return view('contact');
 } );
+
+Route::get('/users', [PaginationController::class,'allUsers']);
+Route::get('/upload', [UploadController::class,'uploadForm']);
