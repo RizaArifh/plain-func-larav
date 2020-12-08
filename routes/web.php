@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
@@ -76,10 +77,16 @@ Route::get('/contact',function(){
     return view('contact');
 } )->name('contact');
 
+
+//pagination
 Route::get('/users', [PaginationController::class,'allUsers'])->name('users.all');
+//upload
 Route::get('/upload', [UploadController::class,'uploadForm'])->name('upload.uploadform');
 Route::post('/upload', [UploadController::class,'uploadFile'])->name('upload.uploadfile');
 
 Route::get('/payment', function () {
     return Payment::process();
 });
+
+//send email
+Route::get('/send-email',[MailController::class,'sendEmail'])->name('mail.send');
