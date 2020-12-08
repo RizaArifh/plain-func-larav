@@ -6,7 +6,7 @@
         <div class="col-md-6 offset-md-3">
             <div class="card text-center">
                 <div class="card-header">
-                    Your Link might be false
+                    Wrong Link
                 </div>
                 <div class="card-body">
                     

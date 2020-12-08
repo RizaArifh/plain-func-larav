@@ -10,6 +10,7 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use App\PaymentGateway\Payment;
 
@@ -91,6 +92,12 @@ Route::get('/payment', function () {
 //send email
 Route::get('/send-email',[MailController::class,'sendEmail'])->name('mail.send');
 
+
+//jetstream
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+route::get('/students',[StudentController::class,'fetchStudents'])->name('students.fetch');
+route::get('/add-user',[UserController::class,'insertRecord'])->name('user.insert');
+route::get('/get-phone/{id}',[UserController::class,'fetchPhoneByUser'])->name('user.fetch');

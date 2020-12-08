@@ -14,7 +14,7 @@
                         <div class="card-body">
 
                         @if(Session::has('post_deleted'))
-                            <div class="alert alert-danger" role="alert">
+                            <div class="alert alert-success" role="alert">
                                 {{Session::get('post_deleted')}}
                             </div>
                             @endif
@@ -24,7 +24,7 @@
                             </div>
                             @endif
 
-                            <table class="table">
+                            <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>Post Title</th>
@@ -39,7 +39,7 @@
                                             <td>{{$post->title}}</td>
                                             <td>{{$post->body}}</td>
                                             <td>
-                                                <a class="btn btn-success" href="/posts/{{$post->id}}">View</a>
+                                                <a class="btn btn-success" href="/posts/{{$post->id}}">Detail</a>
                                                 <a class="btn btn-info" href="/edit-post/{{$post->id}}">Edit</a>
                                                 <a class="btn btn-danger" href="/delete-post/{{$post->id}}">Delete</a>
                                             </td>
