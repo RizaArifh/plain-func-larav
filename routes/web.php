@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
@@ -101,3 +102,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 route::get('/students',[StudentController::class,'fetchStudents'])->name('students.fetch');
 route::get('/add-user',[UserController::class,'insertRecord'])->name('user.insert');
 route::get('/get-phone/{id}',[UserController::class,'fetchPhoneByUser'])->name('user.fetch');
+
+//addcomment
+Route::get('/add-comment/{id}',[PostController::class,'addComment'])->name('post.addcomment');
+Route::get('/get-comments/{id}',[PostController::class,'getCommentByPost'])->name('post.getcomments');
+
+//roles
+Route::get('/add-roles',[RoleController::class,'addRole'])->name('role.add');
+Route::get('/add-users',[RoleController::class,'adduser'])->name('role.useradd');
+Route::get('/rolesbyuser/{id}',[RoleController::class,'getAllRolesByUser'])->name('role.getroleuser');
+Route::get('/usersbyrole/{id}',[RoleController::class,'getAllUsersRoles'])->name('role.getuserrole');

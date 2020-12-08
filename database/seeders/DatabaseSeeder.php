@@ -15,25 +15,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
-        foreach (range(1, 1000) as $index) {
-            DB::table('students')->insert([
-                'name' => $faker->name,
-                'email' => $faker->email,
-                'phone'=>$faker->phoneNumber
-            ]);
-        }
         // $faker = Faker::create();
         // foreach (range(1, 1000) as $index) {
-        //     DB::table('users')->insert([
+        //     DB::table('students')->insert([
         //         'name' => $faker->name,
         //         'email' => $faker->email,
-        //         'password' => bcrypt('secret')
+        //         'phone'=>$faker->phoneNumber
         //     ]);
         // }
-        // \App\Models\User::factory(10)->create();
-        // $this->call([
-        //     PostTableSeeder::class
-        // ]);
+        $faker = Faker::create();
+        foreach (range(1, 100) as $index) {
+            DB::table('users')->insert([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => bcrypt('secret')
+            ]);
+        }
+        \App\Models\User::factory(10)->create();
+        $this->call([
+            PostTableSeeder::class
+        ]);
     }
 }

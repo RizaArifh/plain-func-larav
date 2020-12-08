@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
+use App\Models\Comment;
 
 class PostController extends Controller
 {
@@ -39,6 +40,22 @@ class PostController extends Controller
         $post->save();
         return redirect()->route('post.getallpost')->with('post_created','post has been created successfully');
     }
+
+    //add comment
+    public function addComment($id){
+        $post=Post::find($id);
+        $comment= new Comment();
+        $comment->comment='this is a comment2'; 
+        $post->comments()->save($comment);
+        return redirect()->route('post.getallpost')->with('comment_created','comment has been created successfully');
+    }
+
+    //get comment post by id
+    public function getCommentByPost($id){
+        $comment=Post::find($id)->comments;
+        return $comment;
+    }
+
     public function getPostById($id){
         //using normalq
         // $post=DB::table('posts')->where('id',$id)->first();

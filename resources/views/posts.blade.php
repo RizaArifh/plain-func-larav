@@ -23,10 +23,16 @@
                                 {{Session::get('post_created')}}
                             </div>
                             @endif
+                            @if(Session::has('comment_created'))
+                            <div class="alert alert-success" role="alert">
+                                {{Session::get('comment_created')}}
+                            </div>
+                            @endif
 
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
+                                        <th>Post id</th>
                                         <th>Post Title</th>
                                         <th>Post Body</th>
                                         <th>Action</th>
@@ -36,6 +42,7 @@
                                     <tr>
                                         @foreach ($posts as $post)
                                         <tr>
+                                            <td>{{$post->id}}</td>
                                             <td>{{$post->title}}</td>
                                             <td>{{$post->body}}</td>
                                             <td>
