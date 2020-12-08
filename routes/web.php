@@ -42,8 +42,8 @@ Route::get('/fluent-string', [FluentController::class,'index'])->name('fluent.st
 
 //route login middleware
 Route::get('/user',[UserController::class,'index'])->name('user.index');
-Route::get('/login',[LoginController::class,'index'])->name('login.index')->middleware('checkuser');
-Route::post('/login',[LoginController::class,'loginSubmit'])->name('login.submit');
+// Route::get('/login',[LoginController::class,'index'])->name('login.index')->middleware('checkuser');
+// Route::post('/login',[LoginController::class,'loginSubmit'])->name('login.submit');
 
 //route session
 Route::get('/session/get',[SessionController::class,'getSessionData'])->name('session.get');
@@ -90,3 +90,7 @@ Route::get('/payment', function () {
 
 //send email
 Route::get('/send-email',[MailController::class,'sendEmail'])->name('mail.send');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
