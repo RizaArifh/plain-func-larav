@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FluentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -112,3 +113,9 @@ Route::get('/add-roles',[RoleController::class,'addRole'])->name('role.add');
 Route::get('/add-users',[RoleController::class,'adduser'])->name('role.useradd');
 Route::get('/rolesbyuser/{id}',[RoleController::class,'getAllRolesByUser'])->name('role.getroleuser');
 Route::get('/usersbyrole/{id}',[RoleController::class,'getAllUsersRoles'])->name('role.getuserrole');
+
+//employee
+Route::get('/add-employee',[EmployeeController::class,'addEmployee'])->name('employee.add');
+//export
+Route::get('/export-excel',[EmployeeController::class,'exportIntoExcel'])->name('employee.exportexcel');
+Route::get('/export-csv',[EmployeeController::class,'exportIntoCSV'])->name('employee.exportexcel');
