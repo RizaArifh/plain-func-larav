@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@extends('layouts.navb')
 @section('title','Upload File')
 @section('content')
     

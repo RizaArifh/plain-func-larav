@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('title','Users')
+@extends('layouts.navb')
 @section('content')
 <div class="container">
     <div class="row">

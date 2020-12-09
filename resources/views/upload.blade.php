@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('title','Upload File')
+@extends('layouts.navb')
 @section('content')
 <div class="container">
     <div class="row">

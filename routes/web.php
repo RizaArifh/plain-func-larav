@@ -15,6 +15,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use App\PaymentGateway\Payment;
+use App\Http\Controllers\EmpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,3 +120,7 @@ Route::get('/add-employee',[EmployeeController::class,'addEmployee'])->name('emp
 //export
 Route::get('/export-excel',[EmployeeController::class,'exportIntoExcel'])->name('employee.exportexcel');
 Route::get('/export-csv',[EmployeeController::class,'exportIntoCSV'])->name('employee.exportexcel');
+//get employee
+Route::get('/get-all-employees',[EmpController::class,'getAllEmployees'])->name('employee.getAll');
+//download pdf
+Route::get('/download-pdf',[EmpController::class,'downloadPDF'])->name('employee.pdfdownload');
