@@ -17,6 +17,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use App\PaymentGateway\Payment;
 use App\Http\Controllers\EmpController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ImageController;
 
 /*
@@ -139,3 +140,5 @@ route::post('/resize-image',[ImageController::class,'resizeImageSubmit'])->name(
 route::get('/dropzone',[DropzoneController::class,'dropzone'])->name('dropzone.upload');
 route::post('/dropzone-store',[DropzoneController::class,'dropzoneStore'])->name('dropzone.uploadsubmit');
 
+//gallery
+route::get('/gallery',[GalleryController::class,'gallery'])->name('gallery.get');
