@@ -16,6 +16,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use App\PaymentGateway\Payment;
 use App\Http\Controllers\EmpController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,5 +127,10 @@ Route::get('/get-all-employees',[EmpController::class,'getAllEmployees'])->name(
 Route::get('/export-pdf',[EmpController::class,'downloadPDF'])->name('employee.pdfdownload');
 //import-form
 Route::get('/import-form',[EmployeeController::class,'importForm'])->name('employee.importform');
-// import cmd
+// import file
 Route::post('/import',[EmployeeController::class,'importFile'])->name('employee.import');
+
+//resize img
+route::get('/resize-image',[ImageController::class,'resizeImage'])->name('image.resize');
+route::post('/resize-image',[ImageController::class,'resizeImageSubmit'])->name('image.resizesubmit');
+
