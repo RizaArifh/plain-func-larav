@@ -29,6 +29,10 @@
           <a class="nav-link" href="{{route('mail.send')}}">Send Email</a>
         </li>
         
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('image.resize')}}">Resize Image</a>
+        </li>
+        
       </ul>
     </div>
   </nav>
