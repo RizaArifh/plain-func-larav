@@ -14,7 +14,7 @@ class EmpController extends Controller
 
     public function downloadPDF(){
         $employees=Employee::All();
-        $pdf=PDF::loadview('employee',compact('employees'));
+        $pdf=PDF::loadView('employee',compact('employees'));
         return $pdf->download('employees.pdf');
     }
 }

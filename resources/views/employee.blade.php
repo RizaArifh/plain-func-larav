@@ -41,7 +41,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        
                                             @foreach ($employees as $emp)
                                             <tr>
                                                 <td>{{$emp->id}}</td>

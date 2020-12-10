@@ -123,4 +123,8 @@ Route::get('/export-csv',[EmployeeController::class,'exportIntoCSV'])->name('emp
 //get employee
 Route::get('/get-all-employees',[EmpController::class,'getAllEmployees'])->name('employee.getAll');
 //download pdf
-Route::get('/download-pdf',[EmpController::class,'downloadPDF'])->name('employee.pdfdownload');
+Route::get('/export-pdf',[EmpController::class,'downloadPDF'])->name('employee.pdfdownload');
+//import-form
+Route::get('/import-form',[EmployeeController::class,'importForm'])->name('employee.importform');
+// import cmd
+Route::post('/import',[EmployeeController::class,'importFile'])->name('employee.import');
