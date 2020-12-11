@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\EmployeeController;
@@ -81,9 +82,9 @@ Route::get('/home',function(){
 Route::get('/about',function(){
     return view('about');
 } )->name('about');
-Route::get('/contact',function(){
-    return view('contact');
-} )->name('contact');
+// Route::get('/contact',function(){
+//     return view('contact');
+// } )->name('contact');
 
 
 //pagination
@@ -157,3 +158,8 @@ route::post('/add-student',[StudentController::class,'storeStudent'])->name('stu
 route::get('/edit-student/{id}',[StudentController::class,'editStudent'])->name('student.edit');
 route::post('/update-student',[StudentController::class,'updateStudent'])->name('student.update');
 route::get('/delete-student/{id}',[StudentController::class,'deleteStudent'])->name('student.delete');
+
+
+//contact
+route::get('/contact-us',[ContactController::class,'contact'])->name('contact');
+route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.sendemail');
