@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DropzoneController;
+use App\Http\Controllers\EditorController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FluentController;
 use Illuminate\Support\Facades\Route;
@@ -105,8 +106,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 route::get('/students',[StudentController::class,'fetchStudents'])->name('students.fetch');
+
 route::get('/add-user',[UserController::class,'insertRecord'])->name('user.insert');
+
 route::get('/get-phone/{id}',[UserController::class,'fetchPhoneByUser'])->name('user.fetch');
+
 
 //addcomment
 Route::get('/add-comment/{id}',[PostController::class,'addComment'])->name('post.addcomment');
@@ -142,3 +146,14 @@ route::post('/dropzone-store',[DropzoneController::class,'dropzoneStore'])->name
 
 //gallery
 route::get('/gallery',[GalleryController::class,'gallery'])->name('gallery.get');
+
+//editor
+route::get('/editor',[EditorController::class,'editor'])->name('editor.show');
+
+//students
+route::get('/all-student',[StudentController::class,'students'])->name('student.show');
+route::get('/add-student',[StudentController::class,'addStudent'])->name('student.addform');
+route::post('/add-student',[StudentController::class,'storeStudent'])->name('student.store');
+route::get('/edit-student/{id}',[StudentController::class,'editStudent'])->name('student.edit');
+route::post('/update-student',[StudentController::class,'updateStudent'])->name('student.update');
+route::get('/delete-student/{id}',[StudentController::class,'deleteStudent'])->name('student.delete');

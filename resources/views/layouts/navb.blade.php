@@ -23,6 +23,9 @@
           <a class="nav-link" href="{{route('post.getallpost')}}">Posts</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{route('student.show')}}">Students</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{{route('upload.uploadform')}}">Upload File</a>
         </li>
         <li class="nav-item">
