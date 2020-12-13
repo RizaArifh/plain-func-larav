@@ -26,6 +26,9 @@
           <a class="nav-link" href="{{route('student.show')}}">Students</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{route('teacher.index')}}">Teacher</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{{route('upload.uploadform')}}">Upload File</a>
         </li>
         <li class="nav-item">
@@ -47,3 +50,6 @@
     </div>
   </nav>
   @endsection
+
+  @yield('c')
+  

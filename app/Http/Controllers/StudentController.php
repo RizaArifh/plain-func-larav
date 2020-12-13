@@ -17,7 +17,7 @@ class StudentController extends Controller
     
     public function students(){
         $students=Student::all();
-        return view('all-student',compact('students'));
+        return view('student',compact('students'));
     }
     public function addStudent(){
         return view('add-student');

@@ -22,6 +22,7 @@ use App\Http\Controllers\EmpController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ZipController;
 
 /*
@@ -154,7 +155,7 @@ route::get('/gallery',[GalleryController::class,'gallery'])->name('gallery.get')
 route::get('/editor',[EditorController::class,'editor'])->name('editor.show');
 
 //students
-route::get('/all-student',[StudentController::class,'students'])->name('student.show');
+route::get('/students',[StudentController::class,'students'])->name('student.show');
 route::get('/add-student',[StudentController::class,'addStudent'])->name('student.addform');
 route::post('/add-student',[StudentController::class,'storeStudent'])->name('student.store');
 route::get('/edit-student/{id}',[StudentController::class,'editStudent'])->name('student.edit');
@@ -176,3 +177,7 @@ route::get('/get-zip',[ZipController::class,'zipFile'])->name('zip.download');
 
 //employee index
 Route::get('/employee',[EmployeeController::class,'index'])->name('employee.index');
+
+//teacher
+route::Get('/teachers',[TeacherController::class,'index'])->name('teacher.index');
+route::Post('/add-teachers',[TeacherController::class,'addTeacher'])->name('teacher.add');
