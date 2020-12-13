@@ -31,9 +31,16 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('mail.send')}}">Send Email</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('zip.download')}}">Download Zip</a>
+        </li>
         
         <li class="nav-item">
           <a class="nav-link" href="{{route('image.resize')}}">Resize Image</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('product.searchform')}}">Search</a>
         </li>
         
       </ul>

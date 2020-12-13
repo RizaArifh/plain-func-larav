@@ -21,6 +21,8 @@ use App\PaymentGateway\Payment;
 use App\Http\Controllers\EmpController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ZipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -163,3 +165,14 @@ route::get('/delete-student/{id}',[StudentController::class,'deleteStudent'])->n
 //contact
 route::get('/contact-us',[ContactController::class,'contact'])->name('contact');
 route::post('/send-message',[ContactController::class,'sendEmail'])->name('contact.sendemail');
+
+//product
+route::get('/add-product',[ProductController::class,'addProducts']);
+route::get('/search-product',[ProductController::class,'search'])->name('product.searchform');
+route::get('/search-product-autocomplete',[ProductController::class,'autocomplete'])->name('product.autocomplete');
+
+//download zip
+route::get('/get-zip',[ZipController::class,'zipFile'])->name('zip.download');
+
+//employee index
+Route::get('/employee',[EmployeeController::class,'index'])->name('employee.index');

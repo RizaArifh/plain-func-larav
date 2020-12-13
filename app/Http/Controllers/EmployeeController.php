@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\EmployeeDataTable;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Exports\EmployeeExport;
@@ -59,5 +60,8 @@ return Excel::download(new EmployeeExport,'employelist.csv');
     public function importFile(Request $request){
         Excel::import(new EmployeeImport,$request->file);
         return 'Record are imported successfully';
+    }
+    public function index(EmployeeDataTable $dataTable){
+        return $dataTable->render('employee');
     }
 }

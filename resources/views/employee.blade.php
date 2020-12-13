@@ -5,57 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Employee</title>
-    <style>
-        #tabl{
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        #tabl td,#tabl th{
-            border:1px solid white;
-            padding:8px;
-        }
-        #tabl tr:nth-child(even){
-            background-color:lightblue;
-        }
-        #tabl th{
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: center;
-            background-color: lightgreen;
-            color: white;
-    
-        }
-    </style>
+    {{-- bootstrap css --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+{{-- dataTable css --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+
+    {{-- jquery cdn --}}
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+{{-- bootstrap js --}}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+{{-- datatable js --}}
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+
 </head>
 <body>
-                                <table id="tabl">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>Salary</th>
-                                            <th>Department</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-                                            @foreach ($employees as $emp)
-                                            <tr>
-                                                <td>{{$emp->id}}</td>
-                                                <td>{{$emp->name}}</td>
-                                                <td>{{$emp->email}}</td>
-                                                <td>{{$emp->phone}}</td>
-                                                <td>{{$emp->salary}}</td>
-                                                <td>{{$emp->department}}</td>
-                                                
-                                            </tr>
-                                            @endforeach
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+    
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {!! $dataTable->table() !!}
+        </div>
+    </div>
+</div>
+
+{{!! $dataTable->scripts() !!}}
+
 </body>
 </html>
