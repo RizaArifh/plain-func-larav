@@ -181,3 +181,5 @@ Route::get('/employee',[EmployeeController::class,'index'])->name('employee.inde
 //teacher
 route::Get('/teachers',[TeacherController::class,'index'])->name('teacher.index');
 route::Post('/add-teachers',[TeacherController::class,'addTeacher'])->name('teacher.add');
+route::get('/teachers/{id}',[TeacherController::class,'getTeacherById']);
+route::put('/teachers',[TeacherController::class,'updateTeacher'])->name('teacher.update');

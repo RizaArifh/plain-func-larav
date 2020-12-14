@@ -20,4 +20,18 @@ class TeacherController extends Controller
         $teacher->save();
         return response()->json($teacher);
     }
+
+    public function getTeacherById($id){
+        $teacher=Teacher::find($id);
+        return response()->json($teacher);
+    }
+    public function updateTeacher(Request $request){
+        $teacher= Teacher::find($request->id);
+        $teacher->firstname=$request->firstname;
+        $teacher->lastname=$request->lastname;
+        $teacher->email=$request->email;
+        $teacher->phone=$request->phone;
+        $teacher->save();
+        return response()->json($teacher);
+    }
 }
