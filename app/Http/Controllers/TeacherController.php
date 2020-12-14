@@ -34,4 +34,10 @@ class TeacherController extends Controller
         $teacher->save();
         return response()->json($teacher);
     }
+
+    public function deleteTeacher($id){
+        $teacher= Teacher::find($id);
+        $teacher->delete();
+        return response()->json(['success'=>'record has been deleted']);
+    }
 }
