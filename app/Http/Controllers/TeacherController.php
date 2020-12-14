@@ -40,4 +40,10 @@ class TeacherController extends Controller
         $teacher->delete();
         return response()->json(['success'=>'record has been deleted']);
     }
+
+    public function deleteCheckTeachers(Request $request){
+        $ids=$request->ids;
+        Teacher::whereIn('id',$ids)->delete();
+        return response()->json(['success'=>"Teacher has been deleted!"]);
+    }
 }
