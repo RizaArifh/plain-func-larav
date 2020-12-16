@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DropzoneController;
@@ -185,3 +186,9 @@ route::get('/teachers/{id}',[TeacherController::class,'getTeacherById']);
 route::put('/teachers',[TeacherController::class,'updateTeacher'])->name('teacher.update');
 route::delete('/teacher/{id}',[TeacherController::class,'deleteTeacher']);
 route::delete('/selected-teacher',[TeacherController::class,'deleteCheckTeachers'])->name('teacher.deletechecked');
+
+//ClientSide Form Valid
+route::get('/register',[AuthController::class,'index'])->name('auth.parsley');
+route::post('/register',[AuthController::class,'registerSubmit'])->name('auth.registersubmit');
+
+route::get('/posts-infinite',[PostController::class,'index']);

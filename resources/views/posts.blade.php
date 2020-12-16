@@ -1,12 +1,12 @@
 @extends('layouts.master')
 @extends('layouts.navb')
-@section('title','Upload File')
+@section('title','Posts')
 @section('content')
     
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card my-3">
                         <div class="card-header">
                             All Post
                             <a class="btn btn-success" href="{{route('post.add')}}">Add Post</a>

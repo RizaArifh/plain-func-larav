@@ -46,6 +46,10 @@
           <a class="nav-link" href="{{route('product.searchform')}}">Search</a>
         </li>
         
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('auth.parsley')}}">Validate Parsley</a>
+        </li>
+        
       </ul>
     </div>
   </nav>

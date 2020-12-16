@@ -9,8 +9,13 @@ use App\Models\Comment;
 
 class PostController extends Controller
 {
-    public function index(){
-     //   
+    public function index(Request $request){
+     $posts=Post::paginate(10);
+     if($request->ajax()){
+         $view=view('data',compact('posts'))->render();
+         return response()->json(['html'=>$view]);
+     }
+     return view('postinfinite',compact('posts'));
     }
 
     public function getAllPost(){
