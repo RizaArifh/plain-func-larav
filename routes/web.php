@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DropzoneController;
@@ -192,3 +193,7 @@ route::get('/register',[AuthController::class,'index'])->name('auth.parsley');
 route::post('/register',[AuthController::class,'registerSubmit'])->name('auth.registersubmit');
 
 route::get('/posts-infinite',[PostController::class,'index']);
+
+//chart
+route::get('/chart',[ChartController::class,'index'])->name('chart.index');
+route::get('/bar-chart',[ChartController::class,'barChart'])->name('chart.bar');
